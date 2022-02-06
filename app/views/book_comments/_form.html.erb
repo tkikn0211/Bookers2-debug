@@ -1,4 +1,4 @@
-<%= form_with model: [book,@book_comment], local: true do |f| %>
-   <%= f.text_area :comment, row:'5' %>
+<%= form_with model: [book,book_comment], local: false  do |f| %> <!--非同期通信form_withのlocal: trueを外す-->
+   <%= f.text_area :comment, rows:'5' %>
    <%= f.submit "送信" %>
 <% end %>
