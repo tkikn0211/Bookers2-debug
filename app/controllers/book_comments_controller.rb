@@ -6,7 +6,7 @@ class BookCommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.book_id = @book.id
     @comment.save
-    render 'book_comments/create'
+    render 'book_comments/create'#非同期通信jsファイル指定
     #redirect_to request.referer
   end
 
@@ -14,7 +14,7 @@ class BookCommentsController < ApplicationController
     @book = Book.find(params[:book_id])
     @book_comments = current_user.book_comments.find_by(book_id: @book.id)
     @book_comments.destroy
-    render 'book_comments/destroy'
+    render 'book_comments/destroy'#非同期通信jsファイル指定
     #redirect_to request.referer
   end
 
