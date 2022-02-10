@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :books, dependent: :destroy
   has_many :favorites, dependent: :destroy#いいね機能
+  has_many :favorited_books, through: :favorites, source: :book#いいね数
   has_many :book_comments, dependent: :destroy#コメント機能
 
   #フォローをしたされたの関係
